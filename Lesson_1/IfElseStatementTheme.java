@@ -83,18 +83,20 @@ public class IfElseStatementTheme {
         // Task5
         System.out.println("\nЗадача 5: Определение символа по его коду");
         char symbol = '\u0057';
+        String type;
         if (symbol >= 'a' && symbol <= 'z') {
-            System.out.println("Символ " + symbol + " - маленькая буква");
+            type = "буква";
         }
         else if (symbol >= 'A' && symbol <= 'Z') {
-            System.out.println("Символ " + symbol + " - большая буква ");
-        } 
-        else if (symbol >= '\u0030' && symbol <= '\u0039') {
-            System.out.println("Символ " + symbol + " - число ");
-        } 
-        else {
-            System.out.println("Символ " + symbol + " - не буква и не число");
+            type = "большая буква";
         }
+        else if (symbol >= '\u0030' && symbol <= '\u0039') {
+            type = "число";
+        }
+        else {
+            type = "не буква и не число";
+        }
+        System.out.println("Символ " + symbol + " " + type);
 
         // Task6
         System.out.println("\nЗадача 6: Подсчет суммы вклада и начисленных банком %");
