@@ -4,6 +4,7 @@ public class IfElseStatementTheme {
         System.out.println("Задача 1: Перевод псевдокода на язык Java");
         int age = 35;
         float height = 1.85f;
+        char firstLetterName = "Gennady".charAt(0);
         if (age > 20) {
             System.out.println("Возраст больше 20");
         } else {
@@ -14,7 +15,6 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("Высокий рост");
         }
-        char firstLetterName = "Gennady".charAt(0);
         if (firstLetterName == 'M') {
             System.out.println("Первая буква имени M");
         } else if (firstLetterName == 'I') {
@@ -43,14 +43,13 @@ public class IfElseStatementTheme {
                 System.out.println("Введено четное число " + num3);
             } else {
                 System.out.println("Введено нечетное число " + num3);
-            }
+            } 
             if (num3 > 0) {
                 System.out.println("Введенное число " + num3 + " положительное");
             } else {
                 System.out.println("Введенное число " + num3 + " отрицательное");
             }
-        }
-        else {
+        } else {
             System.out.println("Введено число 0");
         }
 
@@ -67,8 +66,7 @@ public class IfElseStatementTheme {
         System.out.println("Введены числа " + num4 + " " + num5);
         if (num4Ones != num5Ones && num4Tens != num5Tens && num4Hundred != num5Hundred) {
             System.out.println("Равных цифр в числах нет");
-        }
-        else { 
+        } else { 
             if (num4Ones == num5Ones) {
                 System.out.println("Первый разряд чисел равен " + num4Ones);
             }
@@ -86,14 +84,11 @@ public class IfElseStatementTheme {
         String type;
         if (symbol >= 'a' && symbol <= 'z') {
             type = "буква";
-        }
-        else if (symbol >= 'A' && symbol <= 'Z') {
+        } else if (symbol >= 'A' && symbol <= 'Z') {
             type = "большая буква";
-        }
-        else if (symbol >= '\u0030' && symbol <= '\u0039') {
+        } else if (symbol >= 0 && symbol <= 9) {
             type = "число";
-        }
-        else {
+        } else {
             type = "не буква и не число";
         }
         System.out.println("Символ " + symbol + " " + type);
@@ -101,20 +96,14 @@ public class IfElseStatementTheme {
         // Task6
         System.out.println("\nЗадача 6: Подсчет суммы вклада и начисленных банком %");
         int deposit = 300000;
-        float interest;
-        float interestSumm;
-        float amount;
+        float interest = 0.07f;
+        float interestSumm = deposit * interest;
+        float amount = interest * deposit + deposit;
         if (deposit < 100000) {
             interest = 0.05f;
+        } else if (deposit > 300000) { 
+            interest = 0.1f; 
         }
-        else if (deposit >= 100000 && deposit <= 300000) {
-            interest = 0.07f;
-        }
-        else {
-            interest = 0.1f;
-        }
-        interestSumm = deposit * interest;
-        amount = interest * deposit + deposit;
         System.out.println("Сумма вклада " + deposit + " руб.");
         System.out.println("Начисленный процент " + interestSumm + " руб.");
         System.out.println("Итоговая сумма с % " + amount + " руб.");
@@ -122,39 +111,30 @@ public class IfElseStatementTheme {
         // Task7
         System.out.println("\nЗадача 7: Определение оценки по предметам");
         int historyPercent = 59;
-        int programPercent = 91;
-        float historyMark;
-        float programMark;
-        if (historyPercent <= 60) { 
-            historyMark = 2;
-        }
-        else if (historyPercent < 73) {
-            historyMark = 3;
-        }
-        else if (historyPercent < 91) {
-            historyMark = 4;
-        }
-        else {
+        int programmingPercent = 91;
+        float historyMark = 2.0f;
+        float programmingMark = 4.0f;        
+        if (historyPercent > 91) {
             historyMark = 5;
+        } else if (historyPercent > 73 && historyPercent <= 91) {  
+            historyMark = 4;  
+        } else if (historyPercent > 60 && historyPercent <= 73) {
+            historyMark = 3;            
         }
-        if (programPercent <= 60) {
-            programMark = 2;
+        
+        if (programmingPercent <= 60) {
+            programmingMark = 2;
+        } else if (programmingPercent <= 73) {
+            programmingMark = 3;
+        } else if (programmingPercent > 91) {
+            programmingMark = 5;
         }
-        else if (programPercent < 73) {
-            programMark = 3;
-        }
-        else if (programPercent < 91) {
-            programMark = 4;
-        }
-        else {
-            programMark = 5;
-        }
-        float everageMark = (historyMark + programMark) / 2;
-        float everagePercent = (historyPercent + programPercent) / 2;
+        float averageMark = (historyMark + programmingMark) / 2;
+        float averagePercent = (historyPercent + programmingPercent) / 2;
         System.out.println("История " + historyMark);
-        System.out.println("Программирование " + programMark);
-        System.out.println("Средний балл " + everageMark);
-        System.out.println("Средний % по предметам " + everagePercent);
+        System.out.println("Программирование " + programmingMark);
+        System.out.println("Средний балл " + averageMark);
+        System.out.println("Средний % по предметам " + averagePercent);
 
         // Task8
         System.out.println("\nЗадача 8: Расчет прибыли за год");
@@ -170,41 +150,57 @@ public class IfElseStatementTheme {
 
         // Task9
         System.out.println("\nЗадача 9: Подсчет количества банкнот");
-        int have100 = 10;
-        int have10 = 5;
-        int have1 = 50;
+        int inside100 = 10;
+        int inside10 = 5;
+        int inside1 = 50;
         int needAmount = 567;
+        int out100;
         int out10;
-        int out1;
         int need100 = needAmount / 100; // 5
         int need10 = needAmount / 10 % 10; // 6
         int need1 = needAmount % 10; // 7
-        int defic100 = need100 - have100;
-        int defic10 = need10 - have10;
+        int out1;
+        int defic100 = need100 - inside100;
+        int defic10 = need10 - inside10;
 
         System.out.println("Требуется выдать " + needAmount + " USD");
 
-        if (need100 > have100 && have10 > defic100 * 10 + need10 && have1 > need1) {
-            out10 = have10 - defic100 * 10 - need10;
-            System.out.println("выдать " + have100 + " сотен");
-            System.out.println("выдать " + (have10 - out10) + " десятков");
-            System.out.println("выдать " + need1 + " единиц");
-        } else if (need100 < have100 && have10 < need10 && have1 > defic10 * 10 + need1) {
-            out1 = defic10 * 10 + need1;
-            System.out.println("выдать " + need100 + " сотен");
-            System.out.println("выдать " + have10 + " десятков");
+        if (need100 >= inside100 && need10 >= inside10 && need1 >= inside1) {
+            out100 = need100;
+            out10 = need10;
+            out1 = need1;
+            if ((out100 + out10 + out1) >= (need100 + need10 + need1)) {
+                System.out.println("Средств достаточно");
+            }
+        } else if (need100 > inside100) {
+            out100 = inside100;
+            out10 = need10 + defic100 * 10;
+            out1 = need1;
+            System.out.println("выдать " + out100 + " сотен");
+            System.out.println("выдать " + out10 + " десятков");
             System.out.println("выдать " + out1 + " единиц");
-            /*
-            обратный расчет
-             */
-            System.out.print("Итого выдать ");
-            System.out.print(need100 * 100 + have10 * 10 + out1);
-            System.out.print(" USD");
-        } else if (need100 < have100 && have10 < defic100 * 10 + need10 && have1 > defic10 * 10 + need1) {
-            out1 = defic10 * 10 + need1;
-            System.out.println("выдать " + have100 + " сотен");
-            System.out.println("выдать " + have10 + " десятков");
+            if ((out100 + out10 + out1) >= (need100 + need10 + need1)) {
+                System.out.println("Средств достаточно");
+            }
+        } else if (need10 > inside10) {
+            out100 = need100;
+            out10 = inside10;
+            out1 = need1 + defic10 * 10;
+            System.out.println("выдать " + out100 + " сотен");
+            System.out.println("выдать " + out10 + " десятков");
             System.out.println("выдать " + out1 + " единиц");
+            if ((out100 + out10 + out1) >= (need100 + need10 + need1)) {
+                System.out.println("Средств достаточно");
+            }
+        } else if (need1 > inside1 && (inside10 - need10) > inside1 * 10 && (inside10 - need10) % 10 == 0) {
+            out100 = inside100;
+            out10 = inside10 + need1;
+            out1 = need1;
+            System.out.println("выдать " + out100 + " сотен");
+            System.out.println("выдать " + out10 + " десятков");
+            if ((out100 + out10 + out1) >= (need100 + need10)) {
+                System.out.println("Средств достаточно");
+            }
         }
     }
 }
