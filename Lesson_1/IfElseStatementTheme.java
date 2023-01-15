@@ -81,29 +81,26 @@ public class IfElseStatementTheme {
         // Task5
         System.out.println("\nЗадача 5: Определение символа по его коду");
         char symbol = '\u0057';
-        String type;
+        String type = "не буква и не число";
         if (symbol >= 'a' && symbol <= 'z') {
             type = "буква";
         } else if (symbol >= 'A' && symbol <= 'Z') {
             type = "большая буква";
-        } else if (symbol >= 48 && symbol <= 57) {
+        } else if (symbol >= '0' && symbol <= '9') {
             type = "число";
-        } else {
-            type = "не буква и не число";
-        }
+        } 
         System.out.println("Символ " + symbol + " " + type);
 
         // Task6
         System.out.println("\nЗадача 6: Подсчет суммы вклада и начисленных банком %");
         int deposit = 300000;
         float interest = 0.07f;
-        float totalSum;
+        float totalSum = interest * deposit + deposit;
         if (deposit < 100000) {
             interest = 0.05f;
         } else if (deposit > 300000) {
             interest = 0.1f;
-        }
-        totalSum = interest * deposit + deposit;
+        }        
         System.out.println("Сумма вклада " + deposit + " руб.");
         System.out.println("Начисленный процент " + deposit * interest + " руб.");
         System.out.println("Итоговая сумма с % " + totalSum + " руб.");
@@ -154,36 +151,38 @@ public class IfElseStatementTheme {
         int inside10 = 5;
         int inside1 = 50;
         int needSum = 567;
-        int out100 = 0;
-        int out10 = 0;
-        int out1 = 0;
         int need100 = needSum / 100; // 5
         int need10 = needSum / 10 % 10; // 6
         int need1 = needSum % 10; // 7
+        int out100;
+        int out10;
+        int out1;
 
         System.out.println("Требуется выдать " + needSum + " USD");
 
-        if (need100 < inside100 & need10 < inside10 && need1 < inside1) {
+        if (inside100 > need100) {
             out100 = need100;
             out10 = need10;
             out1 = need1;
-        } else if (need100 > inside100) {
+        } else {
             out100 = inside100;
             out10 = (need100 - inside100) * 10 + need10;
             out1 = need1;
-        } else if (need10 > inside10) {
+        }
+        if (inside10 > need10) {
+            out100 = need100;
+            out10 = need10;
+            out1 = need1;
+        } else {
             out100 = need100;
             out10 = inside10;
             out1 = (need10 - inside10) * 10 + need1;
-        } else if (need1 > inside1) {
-            System.out.println("Недостаточно купюр");
         }
         System.out.println("выдать " + out100 + " сотен");
         System.out.println("выдать " + out10 + " десятков");
         System.out.println("выдать " + out1 + " единиц");
 
-        boolean checkUp = true;
-        checkUp = out100 * 100 + out10 * 10 + out1 == needSum;
-        System.out.println(checkUp);
+        boolean checkUp = out100 * 100 + out10 * 10 + out1 == needSum;
+        System.out.println(checkUp == true ? "купюр хватает" : "купюр не хватает");
     }
 }
