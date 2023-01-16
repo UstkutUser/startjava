@@ -7,9 +7,9 @@ public class CyclesTheme {
         int i = -10;
         do {
             if (i % 2 == 0) {
-                evenSumm = evenSumm + i;
+                evenSumm += i;
             } else {
-                oddSumm = oddSumm + i;
+                oddSumm += i;
             }
             i++;
         }
@@ -56,7 +56,7 @@ public class CyclesTheme {
             newNumber = number % 10;
             System.out.print(newNumber);
             sum = sum + newNumber;
-            number = number / 10;
+            number /= 10;
         }
         System.out.println("\n" + sum);
 
@@ -85,7 +85,7 @@ public class CyclesTheme {
             if (digit == 2) {
                 sum1++;
             }
-            newNum = newNum / 10;
+            newNum /= 10;
         }
         System.out.println("Число " + initialNum + " содержит " + sum1 +
                 (sum1 % 2 == 0 ? " (четное) " : " (нечетное) ") + "количество двоек");
@@ -154,6 +154,59 @@ public class CyclesTheme {
                 for (int r = 1; r <= 1; r++) {
                     System.out.printf("%5c", (char)p);
                 }
+            }
+            System.out.println();
+        }
+
+        // Task8
+        System.out.println("\nЗадача 8: Проверка, является ли число палиндромом");
+        int num = 1234321;
+        int firstNum = num;
+        int rev = 0;
+        int lastDigit = 0;
+        while (num > 0) {
+            lastDigit = num % 10;
+            rev = rev * 10 + lastDigit;
+            num /= 10;
+        }
+        System.out.println("Число " + firstNum + ((rev == firstNum) ? " палиндром" : " не палиндром"));
+
+        //Task9
+        System.out.println("\nЗадача 9: Определение, является ли число счастливым");
+        int number1 = 798789;
+        int digit1;
+        int digit2;
+        int res1 = 0;
+        int res2 = 0;
+        for (int f1 = 1; f1 <= 3; f1++) {
+            digit1 = number1 % 10;
+            res1 += digit1;
+            number1 /= 10;
+        }
+        for (int f2 = 1; f2 <= 3; f2++) {
+            digit2 = number1 % 10;
+            res2 += digit2;
+            number1 /= 10;
+        }
+        System.out.println("Сумма цифр 'abc' = " + res1 + "; Сумма цифр 'def' = " + res2);
+        System.out.println((res1 == res2) ? "счастливое число" : "несчастливое число");
+
+        //Task10
+        System.out.println("\nЗадача 10: Вывод таблицы умножения Пифагора");
+        System.out.printf("%S%n", "          таблица пифагора");
+        System.out.print("   |");
+        for (int a1 = 2; a1 < 10; a1++) {
+            System.out.printf("%4d", a1);
+        }
+        System.out.printf("%n");
+        for (int b1 = 2; b1 <= 10; b1++) {
+            System.out.printf("----");
+        }
+        System.out.println();
+        for (int c1 = 2; c1 < 10; c1++) {
+            System.out.printf("%2d |", c1);
+            for (int e1 = 2; e1 < 10; e1++) {
+                System.out.printf("%4d", c1 * e1);
             }
             System.out.println();
         }
