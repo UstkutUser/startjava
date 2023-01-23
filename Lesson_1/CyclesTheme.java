@@ -85,13 +85,13 @@ public class CyclesTheme {
         // Task6
         System.out.println("\nЗадача 6: Отображение фигур в консоли");
         // прямоугольник
-        System.out.println();
         for (int rowCount = 0; rowCount < 5; rowCount++) {
             for (int columnCount = 0; columnCount < 10; columnCount++) {
                 System.out.print("*");
             }
             System.out.println();
         }
+
         // прямоугольный треугольник
         System.out.println();
         int rowCount = 1;
@@ -104,6 +104,7 @@ public class CyclesTheme {
             System.out.println();
             rowCount++;
         }
+
         // треугольник
         System.out.println();
         rowCount = 5;
@@ -121,51 +122,47 @@ public class CyclesTheme {
             rowCount--;
         } while (rowCount > 0);
 
-
         // Task7
         System.out.println("\nЗадача 7: Отображение ASCII-символов");
         System.out.printf("%5s %5s \n", "Dec", "Char");
-        for (int i = 1; i < 123; i += 2) {
-            for (int j = 1; j <= 1; j++) {
-                if (i > 1 && i < 48) {
-                    System.out.printf("%5d %5c\n", i, (char) i);
-                }
-                if (i > 98 && i < 123) {
-                    System.out.printf("%5d %5c\n", i, (char) i);
-                }
+        for (int i = 1; i < 123; i++) {
+            if (i > 1 && i < 48 && i % 2 != 0) {
+                System.out.printf("%5d %5c\n", i, i);
+            }
+            if (i > 97 && i < 123 && i % 2 == 0) {
+                System.out.printf("%5d %5c\n", i, i);
             }
         }
 
         // Task8
         System.out.println("\nЗадача 8: Проверка, является ли число палиндромом");
         num = 1234321;
-        int originalNum = num;
-        int rev = 0;
+        int copyNum = num;
+        int reverse = 0;
         while (num > 0) {
-            rev = rev * 10 + num % 10;
+            reverse = reverse * 10 + num % 10;
             num /= 10;
         }
-        System.out.println("Число " + originalNum + ((rev == originalNum) ? " палиндром" : " не палиндром"));
+        System.out.println("Число " + copyNum + ((reverse == copyNum) ? " палиндром" : " не палиндром"));
 
         //Task9
         System.out.println("\nЗадача 9: Определение, является ли число счастливым");
-        num = 798789;
-        int digit1;
-        int digit2;
-        int res1 = 0;
-        int res2 = 0;
-        for (int i = 1; i <= 3; i++) {
-            digit1 = num % 10;
-            res1 += digit1;
-            num /= 10;
+        num = 987789;
+        int firstThreeSum = 0;
+        int secondThreeSum = 0;
+        for (int i = 0; i < 6; i++) {
+            if (i < 3) {
+                int firstDigit = num % 10;
+                firstThreeSum += firstDigit;
+                num /= 10;
+            } else {
+                int secondDigit = num % 10;
+                secondThreeSum += secondDigit;
+                num /= 10;
+            }
         }
-        for (int i = 1; i <= 3; i++) {
-            digit2 = num % 10;
-            res2 += digit2;
-            num /= 10;
-        }
-        System.out.println("Сумма цифр 'abc' = " + res1 + "; Сумма цифр 'def' = " + res2);
-        System.out.println((res1 == res2) ? "счастливое число" : "несчастливое число");
+        System.out.println("Сумма цифр = " + firstThreeSum + "; Сумма цифр = " + secondThreeSum);
+        System.out.println((firstThreeSum == secondThreeSum) ? "счастливое число" : "несчастливое число");
 
         //Task10
         System.out.println("\nЗадача 10: Вывод таблицы умножения Пифагора");
