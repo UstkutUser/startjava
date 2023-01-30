@@ -14,15 +14,13 @@ public class Calculator {
             }
             result = num1 / num2;
         } else if (sign == '^') {
-            result = 1;             // exponent
+            result = 1;
             for (int i = 0; i < num2; i++) {
-                result = result * num1;
+                result *= num1;
             }
-        }
-        else if (sign == '%') {
+        } else if (sign == '%') {
             result = num1 % num2;
-        }
-        else {
+        } else {
             result = num1 + num2;
         }
         System.out.println(result);
