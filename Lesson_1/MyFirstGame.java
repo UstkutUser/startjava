@@ -1,37 +1,22 @@
 public class MyFirstGame {
     public static void main (String[] args) {
-        int hiddenNumber  = 35;
-        int userNumber  = 77;
-        if (userNumber > hiddenNumber) {
-            System.out.println("Число " + userNumber + " больше того, что загадал компьютер");
+        int hiddenNumber  = 52;
+        int playerNumber  = 77;
+        while (true) {    
+            if (playerNumber == hiddenNumber) {
+                System.out.println("Вы угадали");
+                break;
+            } else if (playerNumber > hiddenNumber) {
+                System.out.println("Число " + playerNumber + " больше загаданного");
+            } else {
+                System.out.println("Число " + playerNumber + " меньше загаданного");
+            }
+            for (int i = 0; i < 5; i++) {
+                playerNumber += 1;
+                if (playerNumber > 100) {
+                    playerNumber = 1;
+                }
+            }
         }
-        userNumber = userNumber - 25;
-        if (userNumber > hiddenNumber) {
-            System.out.println("Число " + userNumber + " больше того, что загадал компьютер");
-        }
-        userNumber = userNumber - 43;
-        if (userNumber < hiddenNumber) {
-            System.out.println("Число " + userNumber + " меньше того, что загадал компьютер");
-        }
-        userNumber = userNumber * 4;
-        if (userNumber > hiddenNumber) {
-            System.out.println("Число " + userNumber + " больше того, что загадал компьютер");
-        }
-        userNumber = userNumber - 21;
-        if (userNumber < hiddenNumber) {
-            System.out.println("Число " + userNumber + " меньше того, что загадал компьютер");
-        }
-        userNumber = userNumber + 10;
-        if (userNumber < hiddenNumber) {
-            System.out.println("Число " + userNumber + " меньше того, что загадал компьютер");
-        }
-        userNumber = userNumber + 8;
-        if (userNumber < hiddenNumber) {
-            System.out.println("Число " + userNumber + " меньше того, что загадал компьютер");
-        }
-        userNumber = userNumber + 2;
-        if (userNumber == hiddenNumber) {
-            System.out.println("Вы победили!");
-        }        
     }
 }
