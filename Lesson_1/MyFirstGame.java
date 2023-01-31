@@ -1,22 +1,18 @@
 public class MyFirstGame {
     public static void main (String[] args) {
-        int hiddenNumber  = 52;
-        int playerNumber  = 77;
-        while (true) {    
+        int hiddenNumber  = 77;
+        int playerNumber  = 25;
+        while (playerNumber != hiddenNumber) {    
             if (playerNumber == hiddenNumber) {
-                System.out.println("Вы угадали");
                 break;
             } else if (playerNumber > hiddenNumber) {
                 System.out.println("Число " + playerNumber + " больше загаданного");
+                playerNumber -= 1;
             } else {
                 System.out.println("Число " + playerNumber + " меньше загаданного");
-            }
-            for (int i = 0; i < 5; i++) {
                 playerNumber += 1;
-                if (playerNumber > 100) {
-                    playerNumber = 1;
-                }
             }
         }
+        System.out.println("Вы угадали");
     }
 }
