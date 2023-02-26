@@ -1,0 +1,47 @@
+public class Calculator {
+    public static final String RESULT_PATTERN = "Первое число %d, второе число равно %d, результат %d\n";
+    private int number1;
+    private char operation;
+    private int number2;
+
+    public void setNumber1(int number1) {
+        this.number1 = number1;
+    }
+    public void setOperation (char operation) {
+        this.operation = operation;
+    }
+    public void setNumber2(int number2) {
+        this.number2 = number2;
+    }
+    public void calculate() {
+        int result = 1;
+        switch (operation) {
+            case '+':
+                result = number1 + number2;
+                break;
+        }
+        switch (operation) {
+            case '-':
+                result = number1 - number2;
+                break;
+        }
+        switch (operation) {
+            case '*':
+                result = number1 * number2;
+                break;
+        }
+        switch (operation) {
+            case '/':
+                result = number1 / number2;
+                break;
+        }
+        switch (operation) {
+            case '^':
+                for (int i = 0; i < number2; i++) {
+                    result *= number1;
+                }
+                break;
+        }
+        System.out.printf(RESULT_PATTERN, number1, number2, result);
+    }
+}
