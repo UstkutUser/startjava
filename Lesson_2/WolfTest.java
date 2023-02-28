@@ -15,13 +15,9 @@ public class WolfTest {
         System.out.println("color of wolf: " + wolfOne.getColor());
 
         wolfOne.move();
-
         wolfOne.sit();
-
         wolfOne.run();
-
-        wolfOne.howl();
-        
+        wolfOne.howl();        
         wolfOne.hunt();
     }
 }

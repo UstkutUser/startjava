@@ -1,9 +1,10 @@
 import java.util.Scanner;
-public class CalculatorTest {
-    public static Scanner console = new Scanner(System.in);
+
+public class CalculatorTest {    
     public static void main(String[] args) {
-        String check;
+        String userAnswer;
         Calculator calculator = new Calculator();
+        Scanner console = new Scanner(System.in);
         do {
             System.out.println("Введите первое число: ");
             calculator.setNumber1(console.nextInt());
@@ -12,12 +13,11 @@ public class CalculatorTest {
             System.out.println("Введите второе число: ");
             calculator.setNumber2(console.nextInt());
             calculator.calculate();
+            console.nextLine();
             do {
                 System.out.println("Хотите продолжить вычисления? [yes/no]: ");
-                check = console.nextLine();
-            }
-            while (!check.equals("yes") && !check.equals("no"));
-        }
-        while (!check.equals("no"));
+                userAnswer = console.nextLine();
+            } while (!userAnswer.equals("yes") && !userAnswer.equals("no"));            
+        } while (!userAnswer.equals("no"));        
     }
 }
