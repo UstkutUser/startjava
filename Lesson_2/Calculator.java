@@ -1,5 +1,4 @@
-public class Calculator {
-    public static final String RESULT_PATTERN = "Первое число %d, второе число равно %d, результат %d\n";
+public class Calculator {    
     private int number1;
     private char operation;
     private int number2;
