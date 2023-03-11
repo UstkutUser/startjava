@@ -7,6 +7,7 @@ public class Jaeger {
     private int speed;
 
     public Jaeger() {}
+
     // parameterized constructor
     public Jaeger(String modelName, String name, String origin, float height, float weight, int speed) {
         this.modelName = modelName;
@@ -45,7 +46,7 @@ public class Jaeger {
         System.out.println(name + " moved forward to fight");
     }
 
-    public void userArmor() {
+    public void useArmor() {
         System.out.println(name + " applied super strong armor");
     }
 

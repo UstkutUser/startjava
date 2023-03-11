@@ -35,6 +35,9 @@ public class Calculator {
                     result *= number1;
                 }
                 break;
+            case '%':
+                result = number1 % number2;
+                break;    
         }
         System.out.println("Первое число " + number1 + " второе число " + number2 + 
                 " результат " + result);

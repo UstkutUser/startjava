@@ -8,27 +8,18 @@ public class JaegerTest {
         horizonBrave.protect();
         
         Jaeger coyoteTango = new Jaeger();
-
         coyoteTango.setModelName("Mark-1");
-
         coyoteTango.setName("Coyote Tango");
-
         coyoteTango.setOrigin("Japan");
-
         coyoteTango.setHeight(84.0f);
-
         coyoteTango.setWeight(2312.0f);
-
         coyoteTango.setSpeed(8);
 
         System.out.println();
 
         coyoteTango.print();
-
         coyoteTango.move();
-
-        coyoteTango.userArmor();
-
+        coyoteTango.useArmor();
         coyoteTango.protect();
     }
 }
