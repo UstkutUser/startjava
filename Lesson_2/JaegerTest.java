@@ -4,7 +4,7 @@ public class JaegerTest {
         Jaeger horizonBrave = new Jaeger("Mark-1", "HorizonBrave", "China", 72.54f, 7.890f, 8);
         horizonBrave.print();
         horizonBrave.move();
-        horizonBrave.userArmor();
+        horizonBrave.useArmor();
         horizonBrave.protect();
         
         Jaeger coyoteTango = new Jaeger();

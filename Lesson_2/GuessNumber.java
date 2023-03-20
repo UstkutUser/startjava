@@ -9,12 +9,11 @@ public class GuessNumber {
     public GuessNumber(Player pl1, Player pl2) {
         this.pl1 = pl1;
         this.pl2 = pl2;
-    }
-
-    Scanner console = new Scanner(System.in);
+    }    
 
     public void start() {
         while (true) {
+            Scanner console = new Scanner(System.in);
             int hiddenNum = 1 + (int) (Math.random() * 1);
             System.out.print(pl1.getName() + ", введите ваше число: ");
             int number = console.nextInt();
